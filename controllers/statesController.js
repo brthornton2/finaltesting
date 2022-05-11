@@ -90,7 +90,7 @@ const deleteState = async (req, res) => {
 }
 
 const getState = async (req, res) => {
-    const state = data.states.find(stat => stat.state === req.params.state);
+    const state = data.states.find(state => state.code === req.params.state);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
@@ -123,13 +123,13 @@ const getState = async (req, res) => {
     //res.json({ "state": req.params.state});
 }
 const getStateCapital = async (req,res) => {
-    const state = data.states.find(stat => stat.state === req.params.state);
-    if(!state){
+    const state = data.states.find(stat => stat.code === req.params.state);
+    /*if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
         })
     }
-    
+    */
     res.json({
         "state": state.state, "capital": state.capital_city
     });
@@ -138,7 +138,7 @@ const getStateCapital = async (req,res) => {
 }
 
 const getStateNickname = async (req,res) =>{
-    const state = data.states.find(stat => stat.state === req.params.state);
+    const state = data.states.find(stat => stat.code === req.params.state);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
@@ -150,19 +150,19 @@ const getStateNickname = async (req,res) =>{
 }
 
 const getStatePopulation = async (req,res) => {
-    const state = data.states.find(stat => stat.state === req.params.state);
+    const state = data.states.find(stat => stat.code === req.params.state);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
         })
     }
     res.json({
-        "state": state.state, "population": toString(state.population)
+        "state": state.state, "population": JSON.stringify(state.population)
     });
     
 }
 const getStateAdmission = async (req,res) => {
-    const state = data.states.find(stat => stat.state === req.params.state);
+    const state = data.states.find(stat => stat.code === req.params.state);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
