@@ -16,14 +16,14 @@ const allStates = async (req,res) => {
 }
 
 const createNewState = async (req,res) => {
-    if(!req?.body?.code){
+    if(!req?.body?.state){
         return res.status(400).json({'message': 'code required'});
     }
     
 
     try{
         const result = await State.create({
-            "code": req.body.code,
+            "code": req.body.state,
             "funfact": req.body.funfact
         });
 
@@ -38,19 +38,19 @@ const createNewState = async (req,res) => {
 }
 
 const updateState = async (req, res) => {
-    if(!req?.body?.stateCode) {
+    if(!req?.body?.state) {
         return res.status(400).json({'message': 'code parameter is required'});
 
     }
     
-    const state = await State.findOne({_stateCode: req.body.code}).exec();
+    const state = await State.findOne({state: req.body.state}).exec();
 
     if(!state){
         return res.status(204).json({
-            'message': `code ${req.body.stateCode} not found`
+            'message': `code ${req.body.state} not found`
         });
     }
-    if(req.body?.stateCode){
+    if(req.body?.state){
         state.stateCode = req.body.stateCode;
     }
     if(req.body?.funFacts){
@@ -71,29 +71,29 @@ const updateState = async (req, res) => {
 }
 
 const deleteState = async (req, res) => {
-    if(!req?.body?.code) {
+    if(!req?.body?.state) {
         return res.status(400).json({'message': 'code required'});
 
     }
 
-    const state = await State.findOne({_code: req.body.code}).exec();
+    const state = await State.findOne({_code: req.body.state}).exec();
 
     if(!state){
         return res.status(204).json({
-            'message': `code ${req.body.code} not found`
+            'message': `code ${req.body.state} not found`
         });
     }
 
-    const result = await employee.deleteOne({_code: req.body.code});
+    const result = await employee.deleteOne({_code: req.body.state});
     res.json(result);
     //res.json({ "state": req.body.state});
 }
 
 const getState = async (req, res) => {
-    const state = data.states.find(stat => stat.code === req.params.code);
+    const state = data.states.find(stat => stat.state === req.params.state);
     if(!state){
         return res.status(400).json({
-            "message": `State code ${req.params.code} not found`
+            "message": `Invalid state abbreviation parameter`
         })
     }
     res.json(state);
@@ -123,7 +123,7 @@ const getState = async (req, res) => {
     //res.json({ "state": req.params.state});
 }
 const getStateCapital = async (req,res) => {
-    const state = data.states.find(stat => stat.code === req.params.code);
+    const state = data.states.find(stat => stat.state === req.params.state);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
@@ -138,7 +138,7 @@ const getStateCapital = async (req,res) => {
 }
 
 const getStateNickname = async (req,res) =>{
-    const state = data.states.find(stat => stat.code === req.params.code);
+    const state = data.states.find(stat => stat.state === req.params.state);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
@@ -150,7 +150,7 @@ const getStateNickname = async (req,res) =>{
 }
 
 const getStatePopulation = async (req,res) => {
-    const state = data.states.find(stat => stat.code === req.params.code);
+    const state = data.states.find(stat => stat.state === req.params.state);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
@@ -162,7 +162,7 @@ const getStatePopulation = async (req,res) => {
     
 }
 const getStateAdmission = async (req,res) => {
-    const state = data.states.find(stat => stat.code === req.params.code);
+    const state = data.states.find(stat => stat.state === req.params.state);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
