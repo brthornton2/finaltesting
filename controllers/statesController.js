@@ -12,7 +12,7 @@ const allStates = async (req,res) => {
     // if(!states) return res.status(204).json({'message': 'no states found'});
     // res.json(states);
  
-    res.json(data1);
+    res.json(data.states);
 }
 
 const createNewState = async (req,res) => {
@@ -115,7 +115,7 @@ const getState = async (req, res) => {
                 { return data.code == code }
         );
       }
-    //stateName = data1.find(code => code === code);
+    //stateName = data.states.find(code => code === code);
     var found = getStateByCode(req.body.code);
 
     res.json(found);
