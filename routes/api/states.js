@@ -6,10 +6,20 @@ const statesController = require('../../controllers/statesController');
 router.route('/')
     .get(statesController.allStates)
     .post(statesController.createNewState)
-    .put(statesController.updateState)
-    .delete(statesController.deleteState);
-
-router.route('/:state')
-    .get(statesController.getState);
-
-module.exports =router;
+    //.put(statesController.updateState)
+router.route('states/:state/funfact')
+    .patch(statesController.updateState)
+router.route('/state')
+    .delete(statesController.deleteState)
+    .get(statesController.getState)
+router.route('/:state/capital')
+    .get(statesController.getStateCapital)
+router.route('/:state/population')
+    .get(statesController.getStatePopulation)
+router.route('/:state/nickname')
+    .get(statesController.getStateNickname)
+router.route('/:state/?contig=true')
+    .get(statesController.getContiguousStates)
+router.route('/:state/?contig=false')
+    .get(statesController.getNonContiguousStates)
+module.exports = router;
