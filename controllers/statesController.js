@@ -199,7 +199,37 @@ const getFunFact = async (req,res) =>{
     }
     res.json(state);
 }
+const postFunFact = async => {
+    if(!req?.body?.funfacts){
+        return res.status(400).json({
+            "message": "State fun facts value required"
+        })
+    }
+    res.status(400).json({
+        "message": "State fun facts value must be an array"
+    })
+}
+const patchFunFact = async => {
+    const refinedParam = req.params.state.toUpperCase();
+    const state = data.states.find(stat => stat.code === refinedParam);
+    if(!req?.body?.index){
+        return res.status(400).json({
+            "message": "State fun facts index required"
+        })
+    }
 
+    res.status(400).json({
+        "message": `No fun facts found for ${state}`
+    })
+
+}
+const deleteFunFact = async => {
+    const refinedParam = req.params.state.toUpperCase();
+    const state = data.states.find(stat => stat.code === refinedParam);
+    res.status(400).json({
+        "message": `No fun facts found for ${state}`
+    })
+}
 
 module.exports = {
     allStates,
@@ -213,5 +243,8 @@ module.exports = {
     getStatePopulation,
     getContiguousStates,
     getNonContiguousStates,
-    getStateAdmission
+    getStateAdmission,
+    postFunFact,
+    patchFunFact,
+    deleteFunFact
 }
