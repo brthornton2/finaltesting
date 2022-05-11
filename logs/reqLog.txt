@@ -252,3 +252,14 @@
 20220511	10:37:16	0fb29806-f342-4479-bc96-7b7d0d7d33bb	GET	undefined	/states/ks/capital
 20220511	10:37:32	99aece5d-008b-4521-8b48-a1113ea743cb	GET	undefined	/states/ks/capital
 20220511	10:38:28	81e4c451-a078-4a53-ace8-3215f37baf92	GET	undefined	/states/Ks/population
+20220511	10:44:23	490f0c7c-0d7b-49fd-9aee-3d2dc8c94e15	GET	undefined	/states/Ks
+20220511	10:53:34	c113d449-5582-493f-8eee-a2a26614eaca	GET	undefined	/states/KS/funfact
+20220511	10:53:41	23465444-cf22-4ab8-a70f-3bc2131c61d7	GET	undefined	/states/Kg/funfact
+20220511	10:55:00	236f86e1-e13a-4332-964c-00a4775594cb	GET	undefined	/states/Kg/funfact
+20220511	10:55:03	7972d3bd-ae49-48f5-b307-269b1f369608	GET	undefined	/states/Ks/funfact
+20220511	10:55:29	8fefbf3a-0a41-443e-a25f-1740d9b2b534	GET	undefined	/states/Ks/funfact
+20220511	10:55:51	7e03c9f9-4330-48bb-a8f5-22c90ddc15ae	GET	undefined	/states/Ks/populaton
+20220511	10:55:54	87795078-b556-4dfa-a041-3832e72d367b	GET	undefined	/states/Ks/population
+20220511	10:57:07	eb5df1b1-ca21-4b60-b572-9579bb1ccb66	GET	undefined	/states/Ks/population
+20220511	10:58:35	509f4602-d035-4c28-b0c7-368e9964cf1e	GET	undefined	/states/Ks/population
+20220511	10:59:09	96f6bac1-a2ed-42f3-9e90-a8bdaabd4d77	GET	undefined	/states/Ks/population

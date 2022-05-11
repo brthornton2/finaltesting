@@ -90,6 +90,7 @@ const deleteState = async (req, res) => {
 }
 
 const getState = async (req, res) => {
+    
     const state = data.states.find(state => state.code === req.params.state);
     if(!state){
         return res.status(400).json({
@@ -162,7 +163,7 @@ const getStatePopulation = async (req,res) => {
         })
     }
     res.json({
-        "state": state.state, "population": JSON.stringify(state.population)
+        "state": state.state, "population": JSON.stringify(state.population).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     });
     
 }
@@ -188,6 +189,16 @@ const getNonContiguousStates = async (req,res) =>{
     const AK = data.states.find(stat => stat.code === AK);
     const HI = data.states.find(stat => stat.code === HI);
 }
+const getFunFact = async (req,res) =>{
+    const refinedParam = req.params.state.toUpperCase();
+    const state = data.states.find(stat => stat.code === refinedParam);
+    if(!state){
+        return res.status(400).json({
+            "message": `Invalid state abbreviation parameter`
+        })
+    }
+    res.json(state);
+}
 
 
 module.exports = {
@@ -196,6 +207,7 @@ module.exports = {
     updateState,
     deleteState,
     getState,
+    getFunFact,
     getStateCapital,
     getStateNickname,
     getStatePopulation,
