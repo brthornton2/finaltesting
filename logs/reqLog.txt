@@ -246,3 +246,9 @@
 20220511	10:16:33	46c80523-fbf7-4bd0-8e86-a8ffacce883f	GET	undefined	/states/KS/population
 20220511	10:20:15	fa919378-9b9e-4877-a165-53d4d020b8d2	GET	undefined	/states/KS/population
 20220511	10:20:26	f5f44ad6-dc2d-4631-b54f-9dbf67d8bd88	GET	undefined	/states/KS/population
+20220511	10:31:27	baa24c8b-cac1-4bd0-8a0f-d6c818479cd5	GET	undefined	/states/?contig=false
+20220511	10:33:58	a7a9cfe1-a05a-4736-b800-e89797921470	GET	undefined	/states/Kg/capital
+20220511	10:34:33	c4e068f4-10f3-49e2-92d3-7811780f1c5b	GET	undefined	/states/Kg/capital
+20220511	10:37:16	0fb29806-f342-4479-bc96-7b7d0d7d33bb	GET	undefined	/states/ks/capital
+20220511	10:37:32	99aece5d-008b-4521-8b48-a1113ea743cb	GET	undefined	/states/ks/capital
+20220511	10:38:28	81e4c451-a078-4a53-ace8-3215f37baf92	GET	undefined	/states/Ks/population

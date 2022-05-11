@@ -123,13 +123,16 @@ const getState = async (req, res) => {
     //res.json({ "state": req.params.state});
 }
 const getStateCapital = async (req,res) => {
-    const state = data.states.find(stat => stat.code === req.params.state);
-    /*if(!state){
+    const refinedParam = req.params.state.toUpperCase();
+    
+    
+    const state = data.states.find(stat => stat.code === refinedParam);
+    if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
         })
     }
-    */
+    
     res.json({
         "state": state.state, "capital": state.capital_city
     });
@@ -138,7 +141,8 @@ const getStateCapital = async (req,res) => {
 }
 
 const getStateNickname = async (req,res) =>{
-    const state = data.states.find(stat => stat.code === req.params.state);
+    const refinedParam = req.params.state.toUpperCase();
+    const state = data.states.find(stat => stat.code === refinedParam);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
@@ -150,7 +154,8 @@ const getStateNickname = async (req,res) =>{
 }
 
 const getStatePopulation = async (req,res) => {
-    const state = data.states.find(stat => stat.code === req.params.state);
+    const refinedParam = req.params.state.toUpperCase();
+    const state = data.states.find(stat => stat.code === refinedParam);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
@@ -162,7 +167,8 @@ const getStatePopulation = async (req,res) => {
     
 }
 const getStateAdmission = async (req,res) => {
-    const state = data.states.find(stat => stat.code === req.params.state);
+    const refinedParam = req.params.state.toUpperCase();
+    const state = data.states.find(stat => stat.code === refinedParam);
     if(!state){
         return res.status(400).json({
             "message": `Invalid state abbreviation parameter`
@@ -174,10 +180,13 @@ const getStateAdmission = async (req,res) => {
     });
 }
 const getContiguousStates = async (req,res) => {
+    
+    
     res.json(data.states);
 }
 const getNonContiguousStates = async (req,res) =>{
-    console.log("no");
+    const AK = data.states.find(stat => stat.code === AK);
+    const HI = data.states.find(stat => stat.code === HI);
 }
 
 
